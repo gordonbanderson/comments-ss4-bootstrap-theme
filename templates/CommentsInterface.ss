@@ -1,5 +1,3 @@
-<% require themedCSS('comments', 'comments') %>
-<h2>****</h2>
 <% if $CommentsEnabled %>
 	<div id="$CommentHolderID" class="comments-holder-container">
 
@@ -26,26 +24,23 @@
             </div>
         </div>
 
-<hr/>
-
-
+        <span class="badge badge-pill badge-info float-right">Notifications <span class="badge badge-light">4</span></span>
 		<h4><% _t('CommentsInterface_ss.COMMENTS','Comments') %></h4>
 
 		<div class="comments-holder">
 			<% if $PagedComments %>
-				<ul class="comments-list root-level">
-					<% loop $PagedComments %>
-						<li class="comment $EvenOdd<% if FirstLast %> $FirstLast <% end_if %> $SpamClass">
-							<% include CommentsInterface_singlecomment %>
-						</li>
-					<% end_loop %>
-				</ul>
+                <% loop $PagedComments %>
+                    <% include CommentsInterface_singlecomment %>
+                <% end_loop %>
 				<% with $PagedComments %>
 					<% include CommentPagination %>
 				<% end_with %>
 			<% end_if %>
-
-			<p class="no-comments-yet"<% if $PagedComments.Count %> style='display: none' <% end_if %> ><% _t('CommentsInterface_ss.NOCOMMENTSYET','No one has commented on this page yet.') %></p>
+            <% if $PagedComments.Count == 0 %>
+            <div class="alert alert-info">
+                <% _t('CommentsInterface_ss.NOCOMMENTSYET','No one has commented on this page yet.') %>
+            </div>
+            <% end_if %>
 
 		</div>
 
@@ -56,8 +51,8 @@
 		<% end_if %>
 
 		<p class="commenting-rss-feed">
-			<a href="$CommentRSSLinkPage"><% _t('CommentsInterface_ss.RSSFEEDCOMMENTS', 'RSS feed for comments on this page') %></a> |
-			<a href="$CommentRSSLink"><% _t('CommentsInterface_ss.RSSFEEDALLCOMMENTS', 'RSS feed for all comments') %></a>
+			<a href="$CommentRSSLinkPage"><i class="fas fa-rss"></i><% _t('CommentsInterface_ss.RSSFEEDCOMMENTS', 'RSS feed for comments on this page') %></a> |
+			<a href="$CommentRSSLink"><i class="fas fa-rss"></i><% _t('CommentsInterface_ss.RSSFEEDALLCOMMENTS', 'RSS feed for all comments') %></a>
 		</p>
 	</div>
 <% end_if %>
