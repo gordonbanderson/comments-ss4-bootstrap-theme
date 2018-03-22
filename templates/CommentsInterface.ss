@@ -50,9 +50,14 @@
 			</p>
 		<% end_if %>
 
-		<p class="commenting-rss-feed">
-			<a href="$CommentRSSLinkPage"><i class="fas fa-rss"></i><% _t('CommentsInterface_ss.RSSFEEDCOMMENTS', 'RSS feed for comments on this page') %></a> |
-			<a href="$CommentRSSLink"><i class="fas fa-rss"></i><% _t('CommentsInterface_ss.RSSFEEDALLCOMMENTS', 'RSS feed for all comments') %></a>
-		</p>
+
+        <ul class="commenting-rss-feed mt-4 list-unstyled list-inline">
+            <li class="list-inline-item">
+                <a href="$CommentRSSLinkPage"><i class="fa fa-rss"></i>&nbsp;<% _t('CommentsInterface_ss.RSSFEEDCOMMENTS', 'RSS feed for comments on this page') %></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="$CommentRSSLink"><i class="fa fa-rss"></i>&nbsp;<% _t('CommentsInterface_ss.RSSFEEDALLCOMMENTS', 'RSS feed for all comments') %></a>
+            </li>
+        </ul>
 	</div>
 <% end_if %>
