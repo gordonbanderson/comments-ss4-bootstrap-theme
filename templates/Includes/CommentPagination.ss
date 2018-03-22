@@ -1,21 +1,32 @@
-<% if $MoreThanOnePage %>
-	<div class="comments-pagination">
-		<p>
-			<% if $PrevLink %>
-				<a href="$PrevLink.ATT" class="previous">&laquo; <% _t('CommentsInterface_ss.PREV','previous') %></a>
-			<% end_if %>
+<nav aria-label="Comments pagination">
+    <ul class="pagination justify-content-center">
+        <% if $PrevLink %>
+            <li class="page-item"><a class="page-link" href="$PrevLink"><% _t('CommentsInterface_ss.PREV','previous') %></a></li>
+        <% else %>
+            <li class="page-item-disabled"><a class="page-link" href="#"><% _t('CommentsInterface_ss.PREV','previous') %></a></li>
+        <% end_if %>
 
-			<% if $Pages %><% loop $Pages %>
-				<% if $CurrentBool %>
-					<strong>$PageNum</strong>
-				<% else %>
-					<a href="$Link.ATT">$PageNum</a>
-				<% end_if %>
-			<% end_loop %><% end_if %>
+        <% if $Pages %>
+            <% loop $PaginationSummary(8) %>
+                <% if $CurrentBool %>
+                    <li class="page-item active">
+                          <span class="page-link">
+                            $PageNum
+                            <span class="sr-only">(current)</span>
+                          </span>
+                    </li>
+                <% else %>
+                    <% if $Link %><li class="page-item"><a class="page-link" href="$Link">$PageNum</a></li>
+                    <% else %><li class="page-item-disabled"><a class="page-link" href="$Link">...</a></li><% end_if %>
 
-			<% if $NextLink %>
-				<a href="$NextLink.ATT" class="next"><% _t('CommentsInterface_ss.NEXT','next') %> &raquo;</a>
-			<% end_if %>
-		</p>
-	</div>
-<% end_if %>
+                <% end_if %>
+            <% end_loop %>
+        <% end_if %>
+
+        <% if $NextLink %>
+            <li class="page-item"><a class="page-link" href="$NextLink"><% _t('CommentsInterface_ss.NEXT','next') %></a></li>
+        <% else %>
+            <li class="page-item-disabled"><a class="page-link" href="#"><% _t('CommentsInterface_ss.NEXT','next') %></a></li>
+        <% end_if %>
+    </ul>
+</nav>
