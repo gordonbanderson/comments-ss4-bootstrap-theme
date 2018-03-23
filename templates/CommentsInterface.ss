@@ -37,9 +37,9 @@
 				<% end_with %>
 			<% end_if %>
             <% if $PagedComments.Count == 0 %>
-            <div class="alert alert-info">
-                <% _t('CommentsInterface_ss.NOCOMMENTSYET','No one has commented on this page yet.') %>
-            </div>
+                <div class="alert alert-info">
+                    <% _t('CommentsInterface_ss.NOCOMMENTSYET','No one has commented on this page yet.') %>
+                </div>
             <% end_if %>
 
 		</div>
