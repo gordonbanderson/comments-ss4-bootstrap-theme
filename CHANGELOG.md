@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.0.1](https://github.com/gordonbanderson/comments-ss4-bootstrap-theme/tree/1.0.1) (2018-03-23)
+[Full Changelog](https://github.com/gordonbanderson/comments-ss4-bootstrap-theme/compare/1.0.0...1.0.1)
+
 ## [1.0.0](https://github.com/gordonbanderson/comments-ss4-bootstrap-theme/tree/1.0.0) (2018-03-22)
 
 
