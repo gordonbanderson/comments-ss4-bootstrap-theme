@@ -23,32 +23,6 @@
 
 
 
-        <h4>Leave your comment</h4>
-        <form id="commentform" action="#" method="post" name="comment-form">
-            <div class="row">
-                <div class="span4">
-                    <input placeholder="* Enter your full name" type="text">
-                </div>
-                <div class="span4">
-                    <input placeholder="* Enter your email address" type="text">
-                </div>
-                <div class="span4 margintop10">
-                    <input placeholder="Enter your website" type="text">
-                </div>
-                <div class="span8 margintop10">
-                    <p>
-                        <textarea rows="12" class="input-block-level" placeholder="*Your comment here"></textarea>
-                    </p>
-                    <p>
-                        <button class="btn btn-theme margintop10" type="submit">Submit comment</button>
-                    </p>
-                </div>
-            </div>
-        </form>
-
-
-
-
         <% if $DeleteAllLink %>
             <p class="delete-comments">
                 <a href="$DeleteAllLink"><% _t('CommentsInterface_ss.DELETEALLCOMMENTS','Delete all comments on this page') %></a>
@@ -82,11 +56,7 @@
                 <% end_if %>
             </div>
         </div>
-
-        <span class="badge badge-pill badge-info float-right">Notifications <span
-            class="badge badge-light">4</span></span>
-        <h4><% _t('CommentsInterface_ss.COMMENTS','Comments') %></h4>
-
+        
 
         <ul class="commenting-rss-feed mt-4 list-unstyled list-inline">
             <li class="list-inline-item">
