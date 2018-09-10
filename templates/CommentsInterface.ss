@@ -56,7 +56,7 @@
                 <% end_if %>
             </div>
         </div>
-        
+
 
         <ul class="commenting-rss-feed mt-4 list-unstyled list-inline">
             <li class="list-inline-item">
