@@ -37,7 +37,7 @@
                 <% if $AddCommentForm %>
                     <% if $canPostComment %>
                         <% if $ModeratedSubmitted %>
-                            <div class="alert alert-warning">
+                            <div class="alert alert-warning" id="moderated">
                                 <% _t('CommentsInterface_ss.AWAITINGMODERATION', 'Your comment has been submitted and is now awaiting moderation.') %>
                             </div>
 
